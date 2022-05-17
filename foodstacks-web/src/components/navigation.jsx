@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Navigation = (props) => {
   return (
     <nav id='menu' className='navbar navbar-default navbar-fixed-top'>
@@ -16,7 +18,7 @@ export const Navigation = (props) => {
             <span className='icon-bar'></span>{' '}
           </button>
           <a className='navbar-brand page-scroll' href='#page-top'>
-            React Landing Page
+            Foodstacks
           </a>{' '}
         </div>
 
@@ -26,8 +28,8 @@ export const Navigation = (props) => {
         >
           <ul className='nav navbar-nav navbar-right'>
             <li>
-              <a href='#features' className='page-scroll'>
-                Features
+              <a className='page-scroll'>
+                <Link to="/Seller">Perfil</Link>
               </a>
             </li>
             <li>
