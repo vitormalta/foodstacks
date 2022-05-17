@@ -313,6 +313,13 @@ header .intro-text {
   background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
   color: #fff;
 }
+
+#services .logo {
+  height: auto;
+  width: 200px;
+  border-radius: 25%;
+}
+
 #services .service-desc {
   margin: 10px 10px 20px;
 }
