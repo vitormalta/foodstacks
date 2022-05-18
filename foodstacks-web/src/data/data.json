@@ -157,7 +157,7 @@
     "email": "info@company.com",
     "facebook": "fb.com",
     "twitter": "twitter.com",
-    "youtube": "youtube.com"
+    "github": "github.com"
   },
 "Seller": {
   "address": "4321 California St, San Francisco, CA 12345 ",
@@ -165,7 +165,7 @@
   "email": "info@company.com",
   "facebook": "fb.com",
   "twitter": "twitter.com",
-  "youtube": "youtube.com"
+  "github": "github.com/vitormalta/foodstacks"
 },
   "Features": [
     {
