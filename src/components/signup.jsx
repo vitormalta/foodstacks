@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom/client';
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import api from '../services/api';
@@ -14,19 +13,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
-      <Anchor color="inherit" href="https://foodstacks-api.herokuapp.com">
-        Foodstacks
-      </Anchor>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
 const theme = createTheme();
 
 export default function SignUp() {
@@ -36,9 +22,17 @@ export default function SignUp() {
   const [cpf, setCpf] = useState('cpf');
   const [birthday, setBirthday] = useState('birthday');
 
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const user = localStorage.getItem("user")
+    if (user) {
+      navigate("/")
+    }
+  }, []);
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
     api.post(
       '/users',
       {
@@ -48,7 +42,9 @@ export default function SignUp() {
         cpf,
         birthday
       }).then((response) => {
-        console.log(response);
+        if (response.status === 200) {
+          navigate("/signin")
+        }
       }, (error) => {
         console.log(error);
       });
