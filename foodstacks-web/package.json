@@ -1,6 +1,10 @@
 {
   "name": "foodstacks-web",
   "version": "0.1.0",
+  "engines" : { 
+    "npm" : ">=8.5.5",
+    "node" : ">=16.15.0"
+  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -53,9 +57,5 @@
   },
   "devDependencies": {
     "react-router-dom": "^6.3.0"
-  },
-  "engines" : { 
-    "npm" : ">=8.5.5",
-    "node" : ">=16.15.0"
   }
 }
