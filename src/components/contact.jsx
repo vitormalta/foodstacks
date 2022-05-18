@@ -1,15 +1,13 @@
-import { Link } from "react-router-dom";
 import { useState } from 'react'
-import api from '../../services/api';
+import api from '../services/api';
 import emailjs from 'emailjs-com'
-
 
 const initialState = {
   name: '',
   email: '',
   message: '',
 }
-export const Seller = (props) => {
+export const Contact = (props) => {
   const [{ name, email, message }, setState] = useState(initialState)
 
   const handleChange = (e) => {
@@ -37,75 +35,6 @@ export const Seller = (props) => {
   }
   return (
     <div>
-      <nav id='menu' className='navbar navbar-default navbar-fixed-top'>
-        <div className='container'>
-          <div className='navbar-header'>
-            <button
-              type='button'
-              className='navbar-toggle collapsed'
-              data-toggle='collapse'
-              data-target='#bs-example-navbar-collapse-1'
-            >
-              {' '}
-              <span className='sr-only'>Toggle navigation</span>{' '}
-              <span className='icon-bar'></span>{' '}
-              <span className='icon-bar'></span>{' '}
-              <span className='icon-bar'></span>{' '}
-            </button>
-            <a className='navbar-brand page-scroll' href='#page-top'>
-              Foodstacks
-            </a>{' '}
-          </div>
-
-          <div
-            className='collapse navbar-collapse'
-            id='bs-example-navbar-collapse-1'
-          >
-            <ul className='nav navbar-nav navbar-right'>
-            <li>
-                <a href='/Home'>
-                  Home
-                </a>
-              </li>              
-              <li>
-                <a href='/Seller'>
-                  Perfil
-                </a>
-              </li>
-              <li>
-                <a href='#'>
-                  About
-                </a>
-              </li>
-              <li>
-                <a href='#'>
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href='#' className='page-scroll'>
-                  Gallery
-                </a>
-              </li>
-              <li>
-                <a href='#' className='page-scroll'>
-                  Testimonials
-                </a>
-              </li>
-              <li>
-                <a href='#' className='page-scroll'>
-                  Team
-                </a>
-              </li>
-              <li>
-                <a href='#' className='page-scroll'>
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
       <div id='contact'>
         <div className='container'>
           <div className='col-md-8'>
@@ -169,7 +98,7 @@ export const Seller = (props) => {
           </div>
           <div className='col-md-3 col-md-offset-1 contact-info'>
             <div className='contact-item'>
-              <h3>Contact Info</h3>
+              <h3>Informações de Contato</h3>
               <p>
                 <span>
                   <i className='fa fa-map-marker'></i> Address
@@ -222,7 +151,7 @@ export const Seller = (props) => {
       <div id='footer'>
         <div className='container text-center'>
           <p>
-            &copy; 2020 Issaaf Kattan React Land Page Template. Design by{' '}
+            &copy; 2022 Foodstacks. Design by{' '}
             <a href='http://www.templatewire.com' rel='nofollow'>
               TemplateWire
             </a>
