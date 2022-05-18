@@ -13,9 +13,8 @@ export default function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/SignUp" element={<SignUp />} />
         <Route path="/SignIn" element={<SignIn />} />
-        {/* <Route path="/" element={<App />} /> */}
+        <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Shop" element={<Shop />} />
       </Routes>
     </BrowserRouter>

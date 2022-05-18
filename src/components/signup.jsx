@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import api from '../services/api';
-import Anchor from '@mui/material/Link';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -146,9 +145,6 @@ export default function SignUp() {
             <Grid container justifyContent="center">
               <Grid item>
                 <Link to="/">Já possui cadastro? Entre aqui</Link>
-                {/* <Link href="#" variant="body2">
-                  Já possui cadastro? Entre aqui
-                </Link> */}
               </Grid>
             </Grid>
           </Box>

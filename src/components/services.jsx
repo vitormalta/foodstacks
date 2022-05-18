@@ -1,5 +1,3 @@
-import Box from '@mui/material/Box';
-
 export const Services = (props) => {
   return (
       <div id='services' className='text-center'>
