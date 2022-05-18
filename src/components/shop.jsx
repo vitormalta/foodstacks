@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import  { useNavigate } from 'react-router-dom'
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import api from '../services/api';
@@ -14,26 +15,44 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function SignUp() {
-  const [nameRest, setNameRest] = useState('Nome da Loja');
-  const [categoria, setCategoria] = useState('Categoria');
-  const [imediacoes, setImediacoes] = useState('Imediações');
-  const [descricao, setDescricao] = useState('Descrição do produto');
-  
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [number, setNumber] = useState("");
+  const [userId, setUserId] = useState("");
+
+  const [ location, setLocation ] = useState([]);
+  const [ categories, setCategories ]  = useState([]);
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const data = localStorage.getItem("user")
+    if (!data) {
+      navigate("/signin")
+    } else {
+      setUserId(JSON.parse(data).userId);
+    }
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    api.post(
-      '/restaurants',
-      {
-        nameRest,
-        categoria,
-        imediacoes,
-      }).then((response) => {
-        console.log(response);
-      }, (error) => {
-        console.log(error);
-      });
+    let listCategories = categories.split(",").map(cat => ({ name: cat }));
+    const payload = {
+      'userId': userId,
+      'name': name,
+      'description': description,
+      'number': number,
+      'locations': [{ 'name': location }],
+      'categories': listCategories
+    };
+    console.log(payload);
+    api.post('/shops', payload)
+      .then((response) => {
+        if (response.status === 200) {
+          navigate("/")
+        }
+      })
+      .catch(err => console.log(err))
   };
 
   return (
@@ -59,51 +78,58 @@ export default function SignUp() {
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
-                  onChange={(e) => setNameRest(e.target.value)}
-                  value={nameRest}
-                  nameRest ="nameRest"
-                  required
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
+                  name="name"
+                  type="text"
+                  label="Nome da Loja"
                   fullWidth
-                  id="nameRest"
-                  label="Nome do Restaurante"
                   autoFocus
+                  required
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  onChange={(e) => setCategoria(e.target.value)}                 
-                  value={categoria}
+                  onChange={(e) => setDescription(e.target.value)}
+                  name="description"              
+                  value={description}
+                  label="Descrição"
+                  type="text"
                   required
                   fullWidth
-                  id="categoria"
-                  label="Categoria"
-                  name="categoria"
-                  autoComplete="categoria"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  onChange={(e) => setImediacoes(e.target.value)}
-                  value={imediacoes}
-                  required
-                  fullWidth
-                  name="imediacoes"
-                  label="Imediações"
-                  type="imediacoes"
-                  id="imediacoes"
-                  autoComplete="imediacoes"
                 />
               </Grid>
               <Grid item xs={30}>
                 <TextField
-                  onChange={(e) => setDescricao(e.target.value)}
-                  value={descricao}
+                  onChange={(e) => setLocation(e.target.value)}
+                  value={location}
+                  name="location"
+                  label="Imediações"
+                  type="text"
                   required
                   fullWidth
-                  name="descricao"
-                  label="Descrição"
-                  type="descricao"
-                  id="descricao"
+                />
+              </Grid>
+              <Grid item xs={30}>
+                <TextField
+                  onChange={(e) => setCategories(e.target.value)}
+                  value={categories}
+                  name="categories"
+                  label="Categorias (separadas por vírgula)"
+                  type="text"
+                  required
+                  fullWidth
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  onChange={(e) => setNumber(e.target.value)}
+                  value={number}
+                  name="number"
+                  label="Contato"
+                  type="tel"
+                  required
+                  fullWidth
                 />
               </Grid>
             </Grid>

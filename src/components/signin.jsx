@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom/client';
+import React, { useEffect, useState } from 'react';
+import  { useNavigate } from 'react-router-dom'
 import { Link } from "react-router-dom";
 import Box from '@mui/material/Box';
 import api from '../services/api';
@@ -7,34 +7,37 @@ import Grid from '@mui/material/Grid';
 import Anchor from '@mui/material/Link';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Checkbox from '@mui/material/Checkbox';
 import Container from '@mui/material/Container';
 import TextField from '@mui/material/TextField';
 import LoginIcon from '@mui/icons-material/Login';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme();
 
-export default function SignIn() {
+export default function SignIn(props) {
   const [email, setEmail] = useState('email');
   const [password, setPassword] = useState('password');
 
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const user = localStorage.getItem("user")
+    if (user) {
+      navigate("/")
+    }
+  }, []);
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    api.post(
-      '/users',
-      {
-        email,
-        password
-      }).then((response) => {
-        console.log(response);
-      }, (error) => {
-        console.log(error);
-      });
+    api.post('/users/login', { email, password })
+      .then((response) => {
+        if (response.status === 200) {
+          localStorage.setItem('user', JSON.stringify(response.data));
+        }
+      }).catch(error => console.log(error));
+    navigate('/')
   };
 
   return (
@@ -57,6 +60,7 @@ export default function SignIn() {
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
+              onChange={(e) => setEmail(e.target.value)}
               margin="normal"
               required
               fullWidth
@@ -67,6 +71,7 @@ export default function SignIn() {
               autoFocus
             />
             <TextField
+              onChange={(e) => setPassword(e.target.value)}
               margin="normal"
               required
               fullWidth
@@ -76,18 +81,12 @@ export default function SignIn() {
               id="password"
               autoComplete="current-password"
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Manter conectado"
-            />
             <Button
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-            >
-              <Link to="/Home">Entrar</Link>
-            </Button>
+            >ENTRAR</Button>
             <Grid container>
               <Grid item xs>
                 <Anchor href="#" variant="body2">

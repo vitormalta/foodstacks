@@ -1,6 +1,33 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Navigation = (props) => {
+  const [ user, setUser ] = useState({})
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const data = localStorage.getItem("user")
+    if (data) {
+      setUser(JSON.parse(data));
+    }
+  }, []);
+
+  const onLogout = () => {
+    localStorage.clear();
+    navigate("/")
+  }
+
+  const renderLogoutBtn = () => {
+    if (user) {
+      return <li>
+      <a className='page-scroll'>
+        <Link to="/" onClick={onLogout}>Log out</Link>
+      </a>
+    </li>
+    }
+  }
+
   return (
     <nav id='menu' className='navbar navbar-default navbar-fixed-top'>
       <div className='container'>
@@ -29,39 +56,15 @@ export const Navigation = (props) => {
           <ul className='nav navbar-nav navbar-right'>
             <li>
               <a className='page-scroll'>
-                <Link to="/Home">Home</Link>
+              <Link to="/shop">Crie uma Loja</Link>
               </a>
             </li>
-            <li>
-              <a href='#about' className='page-scroll'>
-                <Link to="/Seller">Perfil</Link>
-              </a>
-            </li>
-            {/* <li>
-              <a href='#services' className='page-scroll'>
-                Services
-              </a>
-            </li> */}
-            {/* <li>
-              <a href='#portfolio' className='page-scroll'>
-                Gallery
-              </a>
-            </li> */}
             <li>
               <a className='page-scroll'>
-              <Link to="/Shop">Cadastro</Link>
+                <Link to="/">{user.name}</Link>
               </a>
             </li>
-            <li>
-              <a href='#team' className='page-scroll'>
-                Team
-              </a>
-            </li>
-            <li>
-              <a href='#contact' className='page-scroll'>
-                Contact
-              </a>
-            </li>
+            {renderLogoutBtn}
           </ul>
         </div>
       </div>
