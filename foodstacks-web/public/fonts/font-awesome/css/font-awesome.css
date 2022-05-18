@@ -1181,10 +1181,10 @@
 .fa-thumbs-down:before {
   content: "\f165";
 }
-.fa-youtube-square:before {
+.fa-github-square:before {
   content: "\f166";
 }
-.fa-youtube:before {
+.fa-github:before {
   content: "\f167";
 }
 .fa-xing:before {
@@ -1193,7 +1193,7 @@
 .fa-xing-square:before {
   content: "\f169";
 }
-.fa-youtube-play:before {
+.fa-github-play:before {
   content: "\f16a";
 }
 .fa-dropbox:before {
