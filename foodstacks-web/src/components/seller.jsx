@@ -208,8 +208,8 @@ export const Seller = (props) => {
                     </a>
                   </li>
                   <li>
-                    <a href={props.data ? props.data.youtube : '/'}>
-                      <i className='fa fa-youtube'></i>
+                    <a href={props.data ? props.data.github : '/'}>
+                      <i className='fa fa-github'></i>
                     </a>
                   </li>
                 </ul>
