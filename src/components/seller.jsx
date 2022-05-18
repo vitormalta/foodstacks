@@ -3,7 +3,6 @@ import { useState } from 'react'
 import api from '../services/api';
 import emailjs from 'emailjs-com'
 
-
 const initialState = {
   name: '',
   email: '',

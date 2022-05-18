@@ -7,7 +7,7 @@ import SignUp from './components/signup';
 import Shop from './components/shop';
 import { Seller } from './components/seller';
 import * as serviceWorker from './serviceWorker';
-import api from '../services/api';
+import api from './services/api';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export default function Router() {

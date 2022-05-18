@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-// import ReactDOM from 'react-dom/client';
-// import { Link } from "react-router-dom";
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import api from '../services/api';
