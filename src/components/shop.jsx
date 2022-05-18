@@ -14,12 +14,11 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme();
 
-export default function SignUp() {
+export default function Shop() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [number, setNumber] = useState("");
-  const [userId, setUserId] = useState("");
-
+  const [userId, setUserId] = useState(""); 
   const [ location, setLocation ] = useState([]);
   const [ categories, setCategories ]  = useState([]);
 
