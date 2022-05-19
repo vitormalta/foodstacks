@@ -22,6 +22,14 @@ Para usar o Foodstacks localmente, siga estas etapas:
 5. A aplicação será executada localmente através do seu navegador web.
 ```
 
+Deploy
+
+```
+O Foodstacks também está hospedado no Heroku e pode ser acessado através do link abaixo:
+
+https://foodstacks-web.herokuapp.com/
+```
+
 ## 🤝 Colaboradores
 
 Agradecemos às seguintes pessoas que contribuíram para este projeto:
