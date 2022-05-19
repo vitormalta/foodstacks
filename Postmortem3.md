@@ -11,7 +11,7 @@ Início da Iteração | Término da iteração
 | Atividade | Atribuição |
 | --- | --- |
 | Finalizar o desenvolvimento com documentação clara | `@todos` |
-| Criação de testes fim-a-fim automatizado | `@belchior`  `@eva`|
+| Criação de testes fim-a-fim automatizado | `@todos`|
 | Se necessário, refinar histórias de usuário | `@todos` |
 | Ambiente de versionamento atualizado com commits frequentes | `@todos` |
 | Criação de testes fim-a-fim automatizados funcionando com atenção para Cobertura dos testes | `@todos` |
@@ -26,10 +26,9 @@ Início da Iteração | Término da iteração
 | Atividade | Atribuição |
 | --- | --- |
 | Finalizar o desenvolvimento com documentação clara | `@todos` |
-| Criação de testes fim-a-fim automatizado | `@belchior`  `@eva`|
 | Se necessário, refinar histórias de usuário | `@todos` |
 | Ambiente de versionamento atualizado com commits frequentes | `@todos` |
-| Criação de testes fim-a-fim automatizados funcionando com atenção para Cobertura dos testes (parte do back) | `@todos` |
+| Foram realizados testes unitários| `@todos` |
 | Última entrega: deploy de mais algumas HU's | `@todos` |
 | Screencast curto (até 3 minutos) de utilização do produto (contendo legenda ou voz)| `@vitor` |
 | Apresentação do projeto (pitch) em formato PDF| `@eva` |
@@ -41,6 +40,8 @@ Início da Iteração | Término da iteração
 ### O que não foi feito
 > **Nota:** Não conseguimos desenvolver as histórias de usuário com prioridade 2 e 3, buscamos dar mais foco para aquelas que a aplicação necessitasse.
 > Não foi possível também desenvolver testes para a parte do front-end.
+> Criação de testes fim-a-fim automatizado.
+> Criação de testes fim-a-fim automatizados funcionando com atenção para Cobertura dos testes. 
 
 ### Lições aprendidas
 * Ficou claro a necessidade da organização do tempo para a realização das tarefas.
