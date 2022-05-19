@@ -10,43 +10,17 @@
 
 > Aplicação web de uma vitrine virtual, destinada a comunidade acadêmica do CIn-UFPE, busca oferecer uma solução prática e simples, tanto para aqueles que buscam vender seus produtos, quanto para quem os procura, e ao mesmo tempo, promover uma integração entre essa comunidade.
 
-### Ajustes e melhorias
-
-O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
-
-- [ ] Implementação das histórias de usuário de alta prioridade
-- [ ] Tarefa 4
-- [ ] Tarefa 5
-
-## 💻 Pré-requisitos
-
-Antes de começar, verifique se você atendeu aos seguintes requisitos:
-* Você instalou a versão mais recente de `<linguagem / dependência / requeridos>`
-* Você tem uma máquina `<Windows / Linux / Mac>`. Indique qual sistema operacional é compatível / não compatível.
-* Você leu `<guia / link / documentação_relacionada_ao_projeto>`.
-
-
 ## ☕ Usando o Foodstacks
 
-Para usar o Foodstacks, siga estas etapas:
+Para usar o Foodstacks localmente, siga estas etapas:
 
 ```
-<exemplo_de_uso>
+1. Certifique-se de que possui o Git e o npm instalados.
+2. Clone a pasta do repositório para sua máquina.
+3. Abra o terminal dentro da pasta raiz do projeto e instale as dependências através do comando "npm install"
+4. Após instalar as dependência execute o comando "npm run dev".
+5. A aplicação será executada localmente através do seu navegador web.
 ```
-
-Adicione comandos de execução e exemplos que você acha que os usuários acharão úteis. Fornece uma referência de opções para pontos de bônus!
-
-## 📫 Contribuindo para o Foodstacks
-<!---Se o seu README for longo ou se você tiver algum processo ou etapas específicas que deseja que os contribuidores sigam, considere a criação de um arquivo CONTRIBUTING.md separado--->
-Para contribuir com Foodstacks, siga estas etapas:
-
-1. Bifurque este repositório.
-2. Crie um branch: `git checkout -b <nome_branch>`.
-3. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`
-4. Envie para o branch original: `git push origin <nome_do_projeto> / <local>`
-5. Crie a solicitação de pull.
-
-Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
 ## 🤝 Colaboradores
 
@@ -92,5 +66,3 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
 ## 📝 Licença
 
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
-
-[⬆ Voltar ao topo](#Foodstacks)<br>
